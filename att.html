@@ -1,18 +1,29 @@
-<!DOCTYPE html>
-<html>
-<body>
+<html>	<html>
+<head>	
+<title>Form Example</title>	
+<script LANGUAGE="JavaScript" type="text/javascript">	
+function display() {	
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')	
+  message = "<ul><li><b>NAME: </b>" + document.form1.yourname.value;	
+  message += "<li><b>ADDRESS: </b>" + document.form1.address.value;	
+  message += "<li><b>PHONE: </b>" + document.form1.phone.value + "</ul>";	
+  DispWin.document.write(message);	
+}	
+</script>	
+</head>	
+<body>	<body>
+<h1>Form Example</h1>	
+Enter the following information. When you press the Display button,	<h2>HTML Forms</h2>
+the data you entered will be displayed in a pop-up window.	
+<form name="form1">	<form action="/action_page.php">
+<p><b>Name:</b> <input TYPE="TEXT" SIZE="20" NAME="yourname">	  <label for="fname">First name:</label><br>
+</p>	  <input type="text" id="fname" name="fname" value="John"><br>
+<p><b>Address:</b> <input TYPE="TEXT" SIZE="30" NAME="address">	  <label for="lname">Last name:</label><br>
+</p>	  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+<p><b>Phone: </b> <input TYPE="TEXT" SIZE="15" NAME="phone">	  <input type="submit" value="Submit">
+</p>	</form> 
+<p><input TYPE="BUTTON" VALUE="Submit" onClick="display();"></p>	
+</form>	<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
-<h2>HTML Forms</h2>
-
-<form action="/action_page.php">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  <input type="submit" value="Submit">
-</form> 
-
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-
-</body>
+</body>	</body>
 </html>
